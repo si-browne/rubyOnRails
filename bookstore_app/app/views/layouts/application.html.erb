@@ -26,6 +26,43 @@
         <a class="p-2 text-dark" href="#"> <%= link_to "Show Books", books_path %> </a>
 
       </nav>
+      
+
+
+    </div>
+    <hr>
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+
+    <h5 class="my-0 mr-md-auto font-weight-normal"> Tutorial App </h5>
+
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="#"> <%= link_to "Add New Author", new_author_path %> </a>
+      <a class="p-2 text-dark" href="#"> <%= link_to "Show Authors", authors_path %> </a>
+      <a class="p-2 text-dark" href="#"> <%= link_to "Add New Genre", new_genre_path %> </a>
+      <a class="p-2 text-dark" href="#"> <%= link_to "Show Genres", genres_path %> </a>
+      <a class="p-2 text-dark" href="#"> <%= link_to "Add New Publisher", new_publisher_path %> </a>
+      <a class="p-2 text-dark" href="#"> <%= link_to "Show Publishers", publishers_path %> </a>
+      <a class="p-2 text-dark" href="#"> <%= link_to "Add New Novel", new_novel_path %> </a>
+      <a class="p-2 text-dark" href="#"> <%= link_to "Show Novels", novels_path %> </a>
+      <a class="p-2 text-dark" href="#"> <%= link_to "Search Novels", search_novels_path %> </a>
+      <a class="p-2 text-dark" href="#"> <%= link_to "Register", new_user_path %> </a>
+    </nav>
+
+    <% if current_user %>
+    <a class="p-2 text-dark" href="#">
+    <%= link_to 'Log out', session_path('active'), method: :delete %>
+    </a>
+    
+    <a class="p-2 text-dark" href="#">
+    <%= current_user.userid %>
+    </a>
+    
+    <% else %>
+    <a class="p-2 text-dark" href="#">
+    <%= link_to 'Log in', new_session_path, class: "active_nav_link" %>
+    </a>
+    <% end %>
 
     </div>
     <%= yield %>
